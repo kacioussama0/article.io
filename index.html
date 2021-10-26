@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!--Fonts Google-->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+<link rel="stylesheet" href="css/master.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Article preview component</title>
+
+
+</head>
+<body>
+  <div class="card">
+      <img src="images/drawers.jpg" alt="" id="house"/>
+      <div class="right">
+        <h2>Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home</h2>
+        <p>Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.</p>
+        <span class="info">
+          <img src="images/avatar-michelle.jpg" alt="">
+          <span class="name">
+            <h5>Michelle Appleton</h5>
+            <p>28 Jun 2020</p>
+          </span>
+          <i class="fas fa-share share">
+            <span class="social-media">
+              <h3>SHARE</h3>
+              <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+              <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+              <i class="fas fa-share share-one"></i>
+            </span>
+          </i>
+        </span>
+      </div>
+  </div>
+  <script>
+    let card = document.querySelector('div.card')
+    let btn = document.querySelector('.share');
+    btn.onclick = function () { // this function to visible share container
+        let share = document.querySelector('.social-media');
+        if(share.style.visibility == 'visible') {
+          this.style.color = "hsl(212, 23%, 69%)";
+          this.style.backgroundColor = "#EDF2F8";
+          share.style.visibility = "hidden";
+          card.style.height = 'fit-content';
+
+        }
+        else {
+          this.style.color = "#fff";
+          this.style.backgroundColor = "hsl(212, 23%, 69%)";
+          share.style.visibility = "visible";
+          if(window.innerWidth <= 768)
+          card.style.height = '480px';
+          
+        }
+    }
+    console.log();
+  </script>
+</body>
+</html>
